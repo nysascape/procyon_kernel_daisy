@@ -22,8 +22,9 @@ arm64-obj-y		:= debug-monitors.o entry.o irq.o fpsimd.o		\
 			   cpufeature.o alternative.o psci-call.o		\
 			   smp.o smp_spin_table.o topology.o cacheinfo.o
 
-arm64-obj-$(CONFIG_COMPAT)		+= sys32.o signal32.o	\
-					   sys_compat.o
+arm64-obj-$(CONFIG_COMPAT)		+= sys32.o signal32.o			\
+					   sys_compat.o 			\
+					   ../../arm/kernel/opcodes.o
 ifneq ($(CONFIG_VDSO32),y)
 arm64-obj-$(CONFIG_COMPAT)		+= sigreturn32.o
 endif
