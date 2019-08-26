@@ -23,7 +23,7 @@ arm64-obj-y		:= debug-monitors.o entry.o irq.o fpsimd.o		\
 			   smp.o smp_spin_table.o topology.o cacheinfo.o
 
 arm64-obj-$(CONFIG_COMPAT)		+= sys32.o signal32.o	\
-					   sys_compat.o entry32.o
+					   sys_compat.o
 ifneq ($(CONFIG_VDSO32),y)
 arm64-obj-$(CONFIG_COMPAT)		+= sigreturn32.o
 endif
